@@ -4,10 +4,10 @@
  */
 
 // Sustituye estos valores por los que te proporciona IONOS en su panel
-define('DB_HOST', 'db501234567.hosting-data.io'); // Ejemplo: db50xxxxxx.hosting-data.io
-define('DB_NAME', 'dbxxxxxxxx');                   // El nombre que le diste a la base de datos
-define('DB_USER', 'dbuxxxxxxx');                   // El usuario que te asignaron
-define('DB_PASS', 'TuPasswordSecreto');            // Tu contraseña
+define('DB_HOST', 'db5020121108.hosting-data.io'); // Ejemplo: db50xxxxxx.hosting-data.io
+define('DB_NAME', 'dbs15497267');                   // El nombre que le diste a la base de datos
+define('DB_USER', 'dbu1502546');                   // El usuario que te asignaron
+define('DB_PASS', 'Cascara@33@');            // Tu contraseña
 define('DB_PORT', '3306');
 
 // Clave Maestra para revelar identidades (Admin)
