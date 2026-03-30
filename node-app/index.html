@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versos bajo un pseudónimo - Concurso Poético</title>
+    <meta name="description" content="Una plataforma elegante para poetas, donde solo vive el alma del verso bajo el anonimato.">
+    <!-- Google Fonts: Inter and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="header-content animate-fade-in">
+            <h1>Cápsula de Cristal</h1>
+            <p class="subtitle italic">Donde el verso es eterno y el autor silencia su nombre.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <div class="container glass-card animate-slide-up">
+                <h2>Deja tu Impronta</h2>
+                <form id="poem-form">
+                    <div class="input-group">
+                        <label for="poet-name">Tu Identidad Secreta (Nombre)</label>
+                        <input type="text" id="poet-name" placeholder="Tu nombre real (será anonimizado)..." required>
+                    </div>
+                    <div class="input-group">
+                        <label for="poem-text">Tu Verso</label>
+                        <textarea id="poem-text" rows="8" placeholder="Escribe aquí tu poema..." required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="glow-on-hover">Gritar al Silencio</button>
+                    <p id="feedback" class="hidden"></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="gallery-section">
+            <div class="container animate-slide-up">
+                <div class="gallery-header">
+                    <h2>Eco de las Sombras</h2>
+                    <p>Poemas publicados para votación (Anonimizados)</p>
+                </div>
+                <div id="poems-grid" class="poems-grid">
+                    <!-- Poems will be loaded dynamically -->
+                    <div class="loading">Invocando a las musas...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botón para ver "Quiénes son?" (Requiere una clave interna para saber quién es cada poema) -->
+        <section id="admin-trigger">
+            <div class="container">
+                <button type="button" class="admin-btn text-link" onclick="location.hash='#admin-access'">Ver Identidades Secretas (Admin)</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Admin (Simulado o real con password) -->
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content glass-card animate-pop-in">
+            <span class="close-btn" onclick="closeAdmin()">&times;</span>
+            <h2>Revelar Identidades</h2>
+            <p>Introduce la clave Maestra para unir el verso con su autor.</p>
+            <input type="password" id="admin-pass" placeholder="Clave Maestra...">
+            <button id="reveal-btn" class="glow-on-hover">Abrir el Velo</button>
+            <div id="admin-results" class="results-table hidden"></div>
+        </div>
+    </div>
+
+    <footer class="animate-fade-in">
+        <p>&copy; 2026 Concurso Poético Universal - La palabra sobre el hombre.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

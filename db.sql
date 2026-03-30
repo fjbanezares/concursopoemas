@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS `concurso_poetas`;
+USE `concurso_poetas`;
+
+CREATE TABLE IF NOT EXISTS `poemas` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `poeta_nombre` VARCHAR(255) NOT NULL,
+  `poema` TEXT NOT NULL,
+  `clave` VARCHAR(15) NOT NULL UNIQUE,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
