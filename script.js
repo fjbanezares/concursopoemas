@@ -40,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 poemForm.reset();
                 loadPoems(); 
             } else {
-                throw new Error(result.message || 'Error al guardar');
+                console.error('Server Error:', result);
+                let msg = result.message || 'Error al guardar';
+                if (result.debug) msg += ` (Detalle: ${result.debug})`;
+                throw new Error(msg);
             }
         } catch (error) {
             feedback.textContent = error.message;

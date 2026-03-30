@@ -14,7 +14,22 @@ echo "Base de Datos: " . DB_NAME . "\n";
 try {
     $pdo = getDBConnection();
     echo "✅ Conexión establecida con éxito.\n";
-    
+
+    // --- OPCIÓN DE AUTO-SETUP ---
+    if (isset($_GET['setup']) && $_GET['setup'] === 'TRUE') {
+        echo "\n🛠️ Iniciando creación de tabla...\n";
+        $sql = "CREATE TABLE IF NOT EXISTS `poemas` (
+          `id` INT AUTO_INCREMENT PRIMARY KEY,
+          `poeta_nombre` VARCHAR(255) NOT NULL,
+          `poema` TEXT NOT NULL,
+          `clave` VARCHAR(15) NOT NULL UNIQUE,
+          `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
+        
+        $pdo->exec($sql);
+        echo "✅ Tabla 'poemas' creada corectamente.\n";
+    }
+
     // Probar si la tabla existe
     $stmt = $pdo->query("SHOW TABLES LIKE 'poemas'");
     if ($stmt->fetch()) {
